@@ -2,6 +2,13 @@
   --color-primary: #55c57a;
   --color-primary-light: #7ed56f;
   --color-primary-dark: #28b485;
+
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ff7730;
+
+  --color-tertiary-light: #2998ff;
+  --color-tertiary-dark: #5643fa;
+
   --color-grey-dark: #777;
   --color-grey-light-1: #f7f7f7;
   --color-white: #fff;
@@ -328,22 +335,6 @@ body {
   }
 }
 
-/* UTILITY CLASSES */
-
-.u-center-text {
-  text-align: center;
-}
-
-.u-margin-bottom-small {
-  margin-bottom: 1.5rem;
-}
-.u-margin-bottom-medium {
-  margin-bottom: 4rem;
-}
-.u-margin-bottom-big {
-  margin-bottom: 8rem;
-}
-
 .composition {
   position: relative;
 }
@@ -381,4 +372,144 @@ body {
 .composition-photo-p3 {
   top: 10rem;
   left: 20%;
+}
+
+/* SECTION FEATURES */
+
+.section-features {
+  margin-top: -10rem;
+  padding: 20rem 0;
+  background-image:
+    linear-gradient(
+      to right bottom,
+      color-mix(in srgb, var(--color-primary-light) 80%),
+      color-mix(in srgb, var(--color-primary-dark) 80%)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+}
+
+.section-features > .row {
+  transform: skewY(7deg);
+}
+
+.feature-box {
+  background-color: color-mix(in srgb, var(--color-white) 80%);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.05);
+  }
+}
+
+.feature-box-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  color: color-mix(
+    in srgb,
+    var(--color-primary-light) 100%,
+    var(--color-primary-dark) 100%
+  );
+}
+
+/* SECTION TOURS */
+
+.section-tours {
+  background-color: var(--color-grey-light-1);
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
+}
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 50rem;
+}
+
+.card-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 3px;
+  color: #000;
+  font-size: 2rem;
+  height: 50rem;
+  transition: all 0.8s ease;
+
+  backface-visibility: hidden;
+}
+
+.card-side-front {
+  background-color: var(--color-white);
+}
+
+.card-side-back {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-side-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-side-back {
+  transform: rotateY(0);
+}
+
+.card-side-back-1 {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-secondary-light),
+    var(--color-secondary-dark)
+  );
+}
+
+.card-side-back-2 {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+}
+
+.card-side-back-3 {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-tertiary-light),
+    var(--color-tertiary-dark)
+  );
+}
+
+.card-shadow-primary {
+  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-primary-dark) 15%);
+}
+
+.card-shadow-secondary {
+  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-secondary-dark) 15%);
+}
+
+.card-shadow-tartiary {
+  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-tertiary-dark) 15%);
+}
+
+/* UTILITY CLASSES */
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
 }
