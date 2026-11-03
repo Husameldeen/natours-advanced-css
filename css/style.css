@@ -3,8 +3,13 @@
   --color-primary-light: #7ed56f;
   --color-primary-dark: #28b485;
   --color-grey-dark: #777;
+  --color-grey-light-1: #f7f7f7;
   --color-white: #fff;
   --color-black: #000;
+
+  --defult-font-size: 1.6rem;
+
+  --gap-horizontal: 4rem;
 }
 
 *,
@@ -29,6 +34,8 @@ body {
 
   box-sizing: border-box;
 }
+
+/* HEADER */
 
 .header {
   height: 95dvh;
@@ -122,6 +129,8 @@ body {
   }
 }
 
+/* BUTTONS */
+
 .btn:link,
 .btn:visited {
   position: relative;
@@ -130,7 +139,7 @@ body {
   text-transform: uppercase;
   padding: 1.5rem 4rem;
   border-radius: 10rem;
-  font-size: 1.6rem;
+  font-size: var(--defult-font-size);
   transition: all 0.2s;
 }
 
@@ -188,4 +197,188 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: var(--defult-font-size);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 10rem;
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem color-mix(in srgb, var(--color-black) 15%);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--color-black) 15%);
+  }
+}
+
+/* FLOAT */
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row [class^="col-"] {
+  float: left;
+
+  &:not(:last-child) {
+    margin-right: var(--gap-horizontal);
+  }
+}
+
+.col-1-of-2 {
+  width: calc((100% - var(--gap-horizontal)) / 2);
+}
+
+.col-1-of-3 {
+  width: calc((100% - 2 * var(--gap-horizontal)) / 3);
+}
+
+.col-2-of-3 {
+  width: calc(
+    2 * ((100% - 2 * var(--gap-horizontal)) / 3) + var(--gap-horizontal)
+  );
+}
+
+.col-1-of-4 {
+  width: calc((100% - 3 * var(--gap-horizontal)) / 4);
+}
+
+.col-2-of-4 {
+  width: calc(
+    2 * ((100% - 3 * var(--gap-horizontal)) / 4) + var(--gap-horizontal)
+  );
+}
+
+.col-3-of-4 {
+  width: calc(
+    3 * ((100% - 3 * var(--gap-horizontal)) / 4) + 2 * var(--gap-horizontal)
+  );
+}
+
+/* SECTION ABOUT */
+
+.section-about {
+  background-color: var(--color-grey-light-1);
+  padding: 25rem 0;
+  margin-top: -20rem;
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem
+      color-mix(in srgb, var(--color-black) 30%, transparent);
+  }
+}
+
+.heading-tertiary {
+  font-size: var(--defult-font-size);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: var(--defult-font-size);
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+/* UTILITY CLASSES */
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.composition {
+  position: relative;
+}
+
+.composition:hover .composition-photo:not(:hover) {
+  transform: scale(0.9);
+}
+
+.composition-photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--color-black) 40%);
+  border-radius: 0;
+  position: absolute;
+  outline-offset: 1rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2.5rem 4rem color-mix(in srgb, var(--color-black) 50%);
+    z-index: 20;
+    outline: 0.75rem solid var(--color-primary);
+  }
+}
+
+.composition-photo-p1 {
+  top: -2rem;
+  left: 0;
+}
+
+.composition-photo-p2 {
+  top: 2rem;
+  right: 0;
+}
+
+.composition-photo-p3 {
+  top: 10rem;
+  left: 20%;
 }
