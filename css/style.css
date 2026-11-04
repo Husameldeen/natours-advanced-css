@@ -11,6 +11,7 @@
 
   --color-grey-dark: #777;
   --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
   --color-white: #fff;
   --color-black: #000;
 
@@ -162,11 +163,6 @@ body {
     color-mix(in srgb, var(--color-black) 20%, transparent);
 }
 
-.btn-white {
-  background-color: var(--color-white);
-  color: var(--color-grey-dark);
-}
-
 .btn::after {
   content: "";
   display: inline-block;
@@ -180,13 +176,27 @@ body {
   transition: all 0.4s ease-in;
 }
 
+.btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-grey-dark);
+}
+
 .btn-white::after {
   background-color: var(--color-white);
 }
 
-.btn:hover::after {
-  transform: scaleX(1.2) scaleY(1.6);
-  opacity: 0;
+.btn-green {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-green::after {
+  background-color: var(--color-primary);
 }
 
 .btn-animated {
@@ -422,14 +432,14 @@ body {
 
 .section-tours {
   background-color: var(--color-grey-light-1);
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
 }
 
 .card {
   perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 }
 
 .card-side {
@@ -440,8 +450,9 @@ body {
   border-radius: 3px;
   color: #000;
   font-size: 2rem;
-  height: 50rem;
-  transition: all 0.8s ease;
+  height: 52rem;
+  overflow: hidden;
+  transition: all 1s ease;
 
   backface-visibility: hidden;
 }
@@ -455,7 +466,7 @@ body {
 }
 
 .card:hover .card-side-front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .card:hover .card-side-back {
@@ -498,6 +509,129 @@ body {
   box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-tertiary-dark) 15%);
 }
 
+.card-picture {
+  background-size: cover;
+  height: 50%;
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.card-picture-1 {
+  background-image:
+    linear-gradient(
+      to right bottom,
+      color-mix(in srgb, var(--color-secondary-light) 80%),
+      color-mix(in srgb, var(--color-secondary-dark) 80%)
+    ),
+    url(../img/nat-5.jpg);
+}
+
+.card-picture-2 {
+  background-image:
+    linear-gradient(
+      to right bottom,
+      color-mix(in srgb, var(--color-primary-light) 80%),
+      color-mix(in srgb, var(--color-primary-dark) 80%)
+    ),
+    url(../img/nat-6.jpg);
+}
+
+.card-picture-3 {
+  background-image:
+    linear-gradient(
+      to right bottom,
+      color-mix(in srgb, var(--color-tertiary-light) 80%),
+      color-mix(in srgb, var(--color-tertiary-dark) 80%)
+    ),
+    url(../img/nat-7.jpg);
+}
+
+.card-heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--color-white);
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+}
+
+.card-heading-span {
+  padding: 1rem 1.5rem;
+  box-decoration-break: clone;
+}
+
+.card-heading-span-1 {
+  background-image: linear-gradient(
+    to right bottom,
+    color-mix(in srgb, var(--color-secondary-light) 85%),
+    color-mix(in srgb, var(--color-secondary-dark) 85%)
+  );
+}
+
+.card-heading-span-2 {
+  background-image: linear-gradient(
+    to right bottom,
+    color-mix(in srgb, var(--color-primary-light) 85%),
+    color-mix(in srgb, var(--color-primary-dark) 85%)
+  );
+}
+
+.card-heading-span-3 {
+  background-image: linear-gradient(
+    to right bottom,
+    color-mix(in srgb, var(--color-tertiary-light) 85%),
+    color-mix(in srgb, var(--color-tertiary-dark) 85%)
+  );
+}
+
+.card-details {
+  padding: 1rem;
+}
+
+.card-details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card-details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-grey-light-2);
+  }
+}
+
+/* CARD BACK */
+
+.card-cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-price-box {
+  text-align: center;
+  color: var(--color-white);
+  margin-bottom: 8rem;
+}
+
+.card-price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.card-price-value {
+  font-size: 6rem;
+  font-weight: 100;
+}
+
 /* UTILITY CLASSES */
 
 .u-center-text {
@@ -512,4 +646,8 @@ body {
 }
 .u-margin-bottom-big {
   margin-bottom: 8rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
 }
