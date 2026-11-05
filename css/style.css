@@ -226,7 +226,7 @@ body {
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid var(--color-primary);
-    padding: 1.25rem;
+    padding: 1.25rem 2rem;
     transition: all 0.2s ease;
   }
 
@@ -630,6 +630,68 @@ body {
 .card-price-value {
   font-size: 6rem;
   font-weight: 100;
+}
+
+/* SECTION STORIES */
+
+.section-stories {
+  padding: 15rem 0;
+  background-color: var(--color-grey-light-1);
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  padding: 6rem;
+  padding-left: 9rem;
+  box-shadow: 0 3rem 6rem color-mix(in srgb, var(--color-black) 10%);
+  background-color: var(--color-white);
+  border-radius: 3px;
+  font-size: var(--defult-font-size);
+  transform: skewX(-12deg);
+}
+
+.story-shape {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  shape-outside: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-3rem) skewX(12deg);
+}
+
+.story-image {
+  height: 100%;
+  transform: translateX(-3rem) scale(1.4);
+  transition: all 0.5s;
+}
+
+.story-text {
+  transform: skewX(12deg);
+}
+
+.story-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.story:hover .story-caption {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.story:hover .story-image {
+  transform: translateX(-3rem) scale(1);
+  filter: blur(3px) brightness(80%);
 }
 
 /* UTILITY CLASSES */
