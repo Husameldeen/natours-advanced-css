@@ -10,6 +10,7 @@
   --color-tertiary-dark: #5643fa;
 
   --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
   --color-grey-light-1: #f7f7f7;
   --color-grey-light-2: #eee;
   --color-white: #fff;
@@ -235,12 +236,14 @@ body {
     color: var(--color-white);
     border-radius: 10rem;
     transform: translateY(-2px);
-    box-shadow: 0 1rem 2rem color-mix(in srgb, var(--color-black) 15%);
+    box-shadow: 0 1rem 2rem
+      color-mix(in srgb, var(--color-black) 15%, transparent);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--color-black) 15%);
+    box-shadow: 0 0.5rem 1rem
+      color-mix(in srgb, var(--color-black) 15%, transparent);
   }
 }
 
@@ -355,7 +358,8 @@ body {
 
 .composition-photo {
   width: 55%;
-  box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--color-black) 40%);
+  box-shadow: 0 1.5rem 4rem
+    color-mix(in srgb, var(--color-black) 40%, transparent);
   border-radius: 0;
   position: absolute;
   outline-offset: 1rem;
@@ -363,7 +367,8 @@ body {
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0 2.5rem 4rem color-mix(in srgb, var(--color-black) 50%);
+    box-shadow: 0 2.5rem 4rem
+      color-mix(in srgb, var(--color-black) 50%, transparent);
     z-index: 20;
     outline: 0.75rem solid var(--color-primary);
   }
@@ -392,8 +397,8 @@ body {
   background-image:
     linear-gradient(
       to right bottom,
-      color-mix(in srgb, var(--color-primary-light) 80%),
-      color-mix(in srgb, var(--color-primary-dark) 80%)
+      color-mix(in srgb, var(--color-primary-light) 80%, transparent),
+      color-mix(in srgb, var(--color-primary-dark) 80%, transparent)
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
@@ -405,7 +410,7 @@ body {
 }
 
 .feature-box {
-  background-color: color-mix(in srgb, var(--color-white) 80%);
+  background-color: color-mix(in srgb, var(--color-white) 80%, transparent);
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -432,7 +437,7 @@ body {
 
 .section-tours {
   background-color: var(--color-grey-light-1);
-  padding: 25rem 0 15rem 0;
+  padding: 25rem 0 10rem 0;
   margin-top: -10rem;
 }
 
@@ -498,15 +503,18 @@ body {
 }
 
 .card-shadow-primary {
-  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-primary-dark) 15%);
+  box-shadow: 0 1rem 4rem
+    color-mix(in srgb, var(--color-primary-dark) 15%, transparent);
 }
 
 .card-shadow-secondary {
-  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-secondary-dark) 15%);
+  box-shadow: 0 1rem 4rem
+    color-mix(in srgb, var(--color-secondary-dark) 15%, transparent);
 }
 
 .card-shadow-tartiary {
-  box-shadow: 0 1rem 4rem color-mix(in srgb, var(--color-tertiary-dark) 15%);
+  box-shadow: 0 1rem 4rem
+    color-mix(in srgb, var(--color-tertiary-dark) 15%, transparent);
 }
 
 .card-picture {
@@ -520,8 +528,8 @@ body {
   background-image:
     linear-gradient(
       to right bottom,
-      color-mix(in srgb, var(--color-secondary-light) 80%),
-      color-mix(in srgb, var(--color-secondary-dark) 80%)
+      color-mix(in srgb, var(--color-secondary-light) 80%, transparent),
+      color-mix(in srgb, var(--color-secondary-dark) 80%, transparent)
     ),
     url(../img/nat-5.jpg);
 }
@@ -530,8 +538,8 @@ body {
   background-image:
     linear-gradient(
       to right bottom,
-      color-mix(in srgb, var(--color-primary-light) 80%),
-      color-mix(in srgb, var(--color-primary-dark) 80%)
+      color-mix(in srgb, var(--color-primary-light) 80%, transparent),
+      color-mix(in srgb, var(--color-primary-dark) 80%, transparent)
     ),
     url(../img/nat-6.jpg);
 }
@@ -540,8 +548,8 @@ body {
   background-image:
     linear-gradient(
       to right bottom,
-      color-mix(in srgb, var(--color-tertiary-light) 80%),
-      color-mix(in srgb, var(--color-tertiary-dark) 80%)
+      color-mix(in srgb, var(--color-tertiary-light) 80%, transparent),
+      color-mix(in srgb, var(--color-tertiary-dark) 80%, transparent)
     ),
     url(../img/nat-7.jpg);
 }
@@ -566,24 +574,24 @@ body {
 .card-heading-span-1 {
   background-image: linear-gradient(
     to right bottom,
-    color-mix(in srgb, var(--color-secondary-light) 85%),
-    color-mix(in srgb, var(--color-secondary-dark) 85%)
+    color-mix(in srgb, var(--color-secondary-light) 85%, transparent),
+    color-mix(in srgb, var(--color-secondary-dark) 85%, transparent)
   );
 }
 
 .card-heading-span-2 {
   background-image: linear-gradient(
     to right bottom,
-    color-mix(in srgb, var(--color-primary-light) 85%),
-    color-mix(in srgb, var(--color-primary-dark) 85%)
+    color-mix(in srgb, var(--color-primary-light) 85%, transparent),
+    color-mix(in srgb, var(--color-primary-dark) 85%, transparent)
   );
 }
 
 .card-heading-span-3 {
   background-image: linear-gradient(
     to right bottom,
-    color-mix(in srgb, var(--color-tertiary-light) 85%),
-    color-mix(in srgb, var(--color-tertiary-dark) 85%)
+    color-mix(in srgb, var(--color-tertiary-light) 85%, transparent),
+    color-mix(in srgb, var(--color-tertiary-dark) 85%, transparent)
   );
 }
 
@@ -635,8 +643,9 @@ body {
 /* SECTION STORIES */
 
 .section-stories {
+  position: relative;
   padding: 15rem 0;
-  background-color: var(--color-grey-light-1);
+  background-color: transparent;
 }
 
 .story {
@@ -644,8 +653,9 @@ body {
   margin: 0 auto;
   padding: 6rem;
   padding-left: 9rem;
-  box-shadow: 0 3rem 6rem color-mix(in srgb, var(--color-black) 10%);
-  background-color: var(--color-white);
+  box-shadow: 0 3rem 6rem
+    color-mix(in srgb, var(--color-black) 10%, transparent);
+  background-color: color-mix(in srgb, var(--color-white) 60%, transparent);
   border-radius: 3px;
   font-size: var(--defult-font-size);
   transform: skewX(-12deg);
@@ -692,6 +702,103 @@ body {
 .story:hover .story-image {
   transform: translateX(-3rem) scale(1);
   filter: blur(3px) brightness(80%);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+}
+
+.bg-video-content {
+  height: 100%;
+}
+
+/* SECTION TOURS */
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    color-mix(var(--color-primary-light) 100%, transparent),
+    color-mix(var(--color-primary-dark) 100%, transparent)
+  );
+}
+
+.book {
+  background-image:
+    linear-gradient(
+      105deg,
+      color-mix(in srgb, var(--color-white) 90%, transparent) 0%,
+      color-mix(in srgb, var(--color-white) 90%, transparent) 50%,
+      color-mix(transparent, transparent) 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem
+    color-mix(in srgb, var(--color-black) 50%, transparent);
+
+  height: 50rem;
+}
+
+.book-form {
+  width: 50%;
+  padding: 6rem;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form-input {
+  width: 90%;
+  display: block;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: color-mix(in srgb, var(--color-white) 50%, transparent);
+  border: none;
+  border-bottom: 3px solid transparent;
+  box-shadow: 0 0.5rem 2rem
+    color-mix(in srgb, var(--color-black) 10%, transparent);
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem
+    color-mix(in srgb, var(--color-black) 10%, transparent);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.form-input:focus:invalid {
+  border-bottom: 3px solid var(--color-secondary-dark);
+}
+
+.form-input::-webkit-input-placeholder {
+  color: var(--color-grey-dark-2);
+}
+
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.5s;
+}
+
+.form-input:placeholder-shown + .form-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
 }
 
 /* UTILITY CLASSES */
